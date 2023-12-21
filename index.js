@@ -6,7 +6,7 @@ const axios = require('axios')
 const cheerio = require('cheerio')
 const app = express()
 
-var word = "Bolsonaro"
+var word = "notícias"
 
 const noticias = [
   {
