@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: climate-change-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: climate-change-api
+  template:
+    metadata:
+      labels:
+        app: climate-change-api
+    spec:
+      containers:
+      - name: climate-change-api
+        image: rafaelgoncalvesmatos/search-v1
+        ports:
+        - containerPort: 8000
+        # - protocol: TCP
+        #   port: 8000
+        #   targetPort: 8000
+        # type: NodePort
