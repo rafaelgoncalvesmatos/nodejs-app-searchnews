@@ -67,7 +67,7 @@ noticias.forEach(noticias => {
 })
 
 app.get('/', (req, res) => {
-  res.json(`Welcome ${USER} to my Climate Change New API`)
+  res.json(`Welcome ${USER} to my Search News New API`)
 })
 
 app.get('/v1/news', (req, res) => {
