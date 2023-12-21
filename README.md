@@ -60,3 +60,44 @@ for tag and push image to use this command:
 docker tag search-v1:latest rafaelgoncalvesmatos/search-v1:latest
 docker push rafaelgoncalvesmatos/search-v1:latest
 ```
+
+**Kubernetes**
+
+Create cluster:
+
+```
+❯ kind create cluster --config kind-config.yaml --name kubernetes
+Creating cluster "kubernetes" ...
+ ✓ Ensuring node image (kindest/node:v1.25.3) 🖼
+ ✓ Preparing nodes 📦 📦  
+ ✓ Writing configuration 📜 
+ ✓ Starting control-plane 🕹️ 
+ ✓ Installing CNI 🔌 
+ ✓ Installing StorageClass 💾 
+ ✓ Joining worker nodes 🚜 
+Set kubectl context to "kind-kubernetes"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-kubernetes
+```
+
+Creating namespace:
+
+```
+❯ kubectl create namespace nodejs-app-searchnews
+namespace/nodejs-app-searchnews created
+```
+
+Creating services:
+
+```
+❯ kubectl apply -f services.yaml
+service/nodejs-app-searchnews created
+```
+
+Push your image to registry, this case I'm using Docker Registry (e.g. you need tag it before):
+
+```
+❯ docker push rafaelgoncalvesmatos/nodejs-app-searchnews:latest
+```
+
