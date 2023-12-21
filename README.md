@@ -93,6 +93,8 @@ Creating services:
 ```
 ❯ kubectl apply -f services.yaml
 service/nodejs-app-searchnews created
+❯ kubectl apply -f deployment.yaml 
+deployment.apps/nodejs-app-searchnews created
 ```
 
 Push your image to registry, this case I'm using Docker Registry (e.g. you need tag it before):
