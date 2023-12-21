@@ -7,7 +7,7 @@ https://www.youtube.com/watch?v=GK4Pl-GmPHk
 Build image with command:
 
 ```
-docker build -t search-v1 .
+docker build -t search-v2 .
 ```
 
 Check the image created:
@@ -19,7 +19,7 @@ docker images
 To run this image use this command:
 
 ```
-docker run -p 8000 searchnews-v1
+docker run -p 8000 search-v2
 ```
 
 for tag and push image to use this command:
