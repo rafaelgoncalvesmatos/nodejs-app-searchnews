@@ -1,23 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: climate-change-api
+  name: nodejs-app-searchnews
+  namespace: nodejs-app-searchnews
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: climate-change-api
+      app: nodejs-app-searchnews
   template:
     metadata:
       labels:
-        app: climate-change-api
+        app: nodejs-app-searchnews
     spec:
       containers:
-      - name: climate-change-api
-        image: rafaelgoncalvesmatos/search-v1
+      - name: nodejs-app-searchnews
+        image: rafaelgoncalvesmatos/nodejs-app-searchnews
         ports:
         - containerPort: 8000
-        # - protocol: TCP
-        #   port: 8000
-        #   targetPort: 8000
-        # type: NodePort
