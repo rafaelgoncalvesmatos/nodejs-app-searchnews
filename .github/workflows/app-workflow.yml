@@ -1,0 +1,36 @@
+name: Deploy APP Search News
+
+on: 
+  schedule:
+    - cron: "* */2 * * *"
+  
+  workflow_dispatch:
+
+  push:
+    branches:
+      - develop
+
+jobs:
+  build:
+    name: Build Code
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          ref: develop
+      
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+      
+      - name: Install npm latest
+        run: npm i -g npm@latest
+      
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Run tests
+        run: npm run test --if-present

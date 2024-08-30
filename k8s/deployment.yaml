@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
       - name: nodejs-app-searchnews
-        image: rafaelgoncalvesmatos/nodejs-app-searchnews
+        image: thetips4you/nodeapp:latest
         ports:
-        - containerPort: 8000
+        - containerPort: 3000
+        imagePullPolicy: Always
