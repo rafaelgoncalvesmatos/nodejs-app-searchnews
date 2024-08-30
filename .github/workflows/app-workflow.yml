@@ -28,7 +28,7 @@ jobs:
       
       - name: Install npm latest
         run: npm i -g npm@latest
-        working-directory: /app
+        working-directory: /app/src
       
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
