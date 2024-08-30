@@ -68,8 +68,7 @@ noticias.forEach(noticias => {
 })
 
 app.get('/', (req, res) => {
-  res.json(`Welcome ${USER} to my Search News New API
-  http://localhost:8000/v1/news`)
+  res.json(`Welcome Rafael to my Search New API http://localhost:8080/v1/news`)
 })
 
 app.get('/v1/news', (req, res) => {
