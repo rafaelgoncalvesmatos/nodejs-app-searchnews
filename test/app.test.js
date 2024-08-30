@@ -15,7 +15,7 @@ describe('New API', () => {
     });
     it('Should return a welcome message on the root route', (done) => {
         chai.request(server)
-            .get('/')
+            .get('http://localhost:8000/')
             .end((err, res) => {
                 expect(res).to.have.status(200);
                 expect(res.body).to.equal(`Welcome Rafael to my Search New API http://localhost:8080/v1/news`);
@@ -25,7 +25,7 @@ describe('New API', () => {
 
     it('Should return an array of news articles on /v1/news', (done) => {
         chai.request(server)
-            .get('/v1/news')
+            .get('http://localhost:8000/v1/news')
             .end((err, res) => {
                 expect(res).to.have.status(200);
                 expect(res.body).to.be.an('array');
